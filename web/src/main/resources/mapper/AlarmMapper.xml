@@ -54,7 +54,7 @@
     <delete id="deleteCheckerResult" parameterType="ChecherResult">
         DELETE
         FROM alarm_history
-        WHERE application_id = #{applicationId} AND checker_name = #{checkerName}
+        WHERE application_id = #{applicationId} AND checker_name = #{checkerName} AND detected = #{detected}
     </delete>
     
     <insert id="insertCheckerResult" parameterType="ChecherResult">

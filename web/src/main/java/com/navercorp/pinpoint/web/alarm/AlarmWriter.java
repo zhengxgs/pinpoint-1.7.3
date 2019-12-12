@@ -50,7 +50,7 @@ public class AlarmWriter implements ItemWriter<AlarmChecker> {
             if (checker.isDetected()) {
                 sendAlarmMessage(beforeCheckerResult, checker);
             }
-
+            // zhengxgs 插入alarm_history一条记录，如果达到阈值，则Detected字段为true，否则为false。该表会被重复删除记录
             alarmService.updateBeforeCheckerResult(beforeCheckerResult, checker);
         }
     }

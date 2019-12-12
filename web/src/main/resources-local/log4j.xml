@@ -10,22 +10,22 @@
     </appender>
 
     <logger name="com.navercorp.pinpoint" additivity="false">
-        <level value="DEBUG"/>
+        <level value="INFO"/>
         <appender-ref ref="console"/>
     </logger>
 
     <logger name="com.navercorp.pinpoint.web.filter" additivity="false">
-        <level value="DEBUG"/>
+        <level value="INFO"/>
         <appender-ref ref="console"/>
     </logger>
 
     <logger name="com.navercorp.pinpoint.web.controller" additivity="false">
-        <level value="DEBUG"/>
+        <level value="INFO"/>
         <appender-ref ref="console"/>
     </logger>
 
     <logger name="com.navercorp.pinpoint.web.applicationmap" additivity="false">
-        <level value="DEBUG"/>
+        <level value="INFO"/>
         <appender-ref ref="console"/>
     </logger>
 
@@ -35,17 +35,17 @@
     </logger>
 
     <logger name="com.navercorp.pinpoint.web.mapper" additivity="false">
-        <level value="DEBUG"/>
+        <level value="INFO"/>
         <appender-ref ref="console"/>
     </logger>
 
     <logger name="com.navercorp.pinpoint.web.service" additivity="false">
-        <level value="DEBUG"/>
+        <level value="INFO"/>
         <appender-ref ref="console"/>
     </logger>
 
     <logger name="com.navercorp.pinpoint.web.dao" additivity="false">
-        <level value="DEBUG"/>
+        <level value="INFO"/>
         <appender-ref ref="console"/>
     </logger>
 

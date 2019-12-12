@@ -15,6 +15,12 @@
                             ng-class="{true: 'glyphicon-arrow-down', false: 'glyphicon-arrow-up'}[transactionReverse]"></span></div>
                 </th>
                 <th>
+                    <div class="th-inner" ng-click="transactionOrder('endpoint')">hostname
+                        <span ng-show="transactionOrderBy == 'endpoint'"  class="glyphicon"
+                              ng-class="{true: 'glyphicon-arrow-down', false: 'glyphicon-arrow-up'}[transactionReverse]"></span>
+                    </div>
+                </th>
+                <th>
                     <div class="th-inner" ng-click="transactionOrder('application')">Path
                         <span ng-show="transactionOrderBy == 'application'"  class="glyphicon"
                            ng-class="{true: 'glyphicon-arrow-down', false: 'glyphicon-arrow-up'}[transactionReverse]"></span></div>

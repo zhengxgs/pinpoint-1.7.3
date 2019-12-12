@@ -46,6 +46,9 @@
 						name: "HEAP USAGE RATE",
 						desc: "heap의 사용률이 임계치를 초과한 경우 알람이 전송된다."
 					},{
+						name: "GC COUNT",
+                        desc: "application GC次数告警配置"
+                    },{
 						name: "JVM CPU USAGE RATE",
 						desc: "application의 CPU 사용률이 임계치를 초과한 경우 알람이 전송된다."
 					},{

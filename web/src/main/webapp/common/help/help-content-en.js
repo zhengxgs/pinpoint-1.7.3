@@ -46,6 +46,9 @@
 						name: "HEAP USAGE RATE",
 						desc: "Sends an alarm when the application's heap usage(%) exceeds the configured threshold."
 					},{
+                        name: "GC COUNT",
+                        desc: "Sends an alarm when the application's GC count exceeds the configured threshold."
+                    },{
 						name: "JVM CPU USAGE RATE",
 						desc: "Sends an alarm when the application's CPU usage(%) exceeds the configured threshold."
 					},{

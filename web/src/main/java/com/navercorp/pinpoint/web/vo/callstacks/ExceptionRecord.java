@@ -31,6 +31,8 @@ public class ExceptionRecord extends BaseRecord {
         this.title = toSimpleExceptionName(align.getExceptionClass());
         this.arguments = buildArgument(align.getExceptionMessage());
         this.isAuthorized = true;
+        /** zhengxgs fix bug */
+        this.hasException = true;
     }
 
     String toSimpleExceptionName(String exceptionClass) {

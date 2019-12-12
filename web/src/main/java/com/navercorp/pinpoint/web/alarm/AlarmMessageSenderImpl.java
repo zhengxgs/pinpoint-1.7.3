@@ -43,6 +43,7 @@ public class AlarmMessageSenderImpl implements AlarmMessageSender {
 
     @Override
     public void sendEmail(AlarmChecker checker, int sequenceCount) {
+        // zhengxg 没有
 
     }
 }
