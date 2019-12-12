@@ -87,6 +87,39 @@ public class AgentInfoServiceImpl implements AgentInfoService {
     private AgentDownloadInfoDao agentDownloadInfoDao;
 
     @Override
+    public int removeUnexpectedAgentInfo(ApplicationAgentList.Key key) {
+        int delCount = 0;
+        long timestamp = System.currentTimeMillis();
+        // key = hostname
+        // value= list fo agentinfo
+        List<Application> applications = applicationIndexDao.selectAllApplicationNames();
+        for (Application application : applications) {
+
+            final List<String> agentIdList = this.applicationIndexDao.selectAgentIds(application.getName());
+            if (logger.isDebugEnabled()) {
+                logger.debug("agentIdList={}", agentIdList);
+            }
+
+            if (CollectionUtils.isEmpty(agentIdList)) {
+                logger.debug("agentIdList is empty. applicationName={}", application.getName());
+                return 0;
+            }
+
+            List<AgentInfo> agentInfos = this.agentInfoDao.getAgentInfos(agentIdList, timestamp);
+            this.agentLifeCycleDao.populateAgentStatuses(agentInfos, timestamp);
+            for (AgentInfo agentInfo : agentInfos) {
+
+                AgentStatus status = agentInfo.getStatus();
+                if (status.getState().equals(AgentLifeCycleState.UNEXPECTED_SHUTDOWN)) {
+                    delCount++;
+                    applicationIndexDao.deleteAgentId(agentInfo.getApplicationName(), agentInfo.getAgentId());
+                }
+            }
+        }
+        return delCount;
+    }
+
+    @Override
     public ApplicationAgentList getApplicationAgentList(ApplicationAgentList.Key key) {
         return this.getApplicationAgentList(key, System.currentTimeMillis());
     }

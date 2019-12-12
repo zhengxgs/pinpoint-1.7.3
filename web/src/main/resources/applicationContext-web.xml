@@ -114,6 +114,9 @@
         <property name="rowKeyDistributorByHashPrefix" ref="metadataRowKeyDistributor2"></property>
     </bean>
 
+    <bean id="alarmMessageSenderImpl" class="com.navercorp.pinpoint.web.alarm.AlarmMessageSenderImpl">
+    </bean>
+
     <util:properties id="batchProps" location="classpath:batch.properties"/>
 
     <!-- add to load for batch spring configuration.we need to conditional logic to behave differently base on 'batch.enable' config value -->

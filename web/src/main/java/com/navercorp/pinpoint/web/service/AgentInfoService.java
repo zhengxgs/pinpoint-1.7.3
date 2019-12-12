@@ -33,6 +33,13 @@ import java.util.Set;
  */
 public interface AgentInfoService {
 
+    /**
+     * zhengxgs
+     * @param key
+     * @return
+     */
+    int removeUnexpectedAgentInfo(ApplicationAgentList.Key key);
+
     ApplicationAgentList getApplicationAgentList(ApplicationAgentList.Key key);
 
     ApplicationAgentList getApplicationAgentList(ApplicationAgentList.Key key, String applicationName);

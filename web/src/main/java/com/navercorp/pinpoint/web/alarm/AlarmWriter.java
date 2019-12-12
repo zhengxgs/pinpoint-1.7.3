@@ -16,15 +16,14 @@
 
 package com.navercorp.pinpoint.web.alarm;
 
-import java.util.List;
-import java.util.Map;
-
-import org.springframework.batch.item.ItemWriter;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import com.navercorp.pinpoint.web.alarm.checker.AlarmChecker;
 import com.navercorp.pinpoint.web.alarm.vo.CheckerResult;
 import com.navercorp.pinpoint.web.service.AlarmService;
+import org.springframework.batch.item.ItemWriter;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author minwoo.jung
@@ -32,7 +31,7 @@ import com.navercorp.pinpoint.web.service.AlarmService;
 public class AlarmWriter implements ItemWriter<AlarmChecker> {
 
     @Autowired(required = false)
-    private AlarmMessageSender alarmMessageSender = new EmptyMessageSender();
+    private AlarmMessageSender alarmMessageSender = new AlarmMessageSenderImpl();
 
     @Autowired
     private AlarmService alarmService;
