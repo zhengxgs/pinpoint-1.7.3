@@ -126,7 +126,7 @@ public class ApplicationMapBuilder {
         if (linkDataDuplexMap == null) {
             throw new NullPointerException("linkDataDuplexMap must not be null");
         }
-        logger.info("Building application map");
+        logger.debug("Building application map");
 
         NodeType nodeType = this.nodeType;
         if (nodeType == null) {

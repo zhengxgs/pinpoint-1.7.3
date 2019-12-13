@@ -74,13 +74,13 @@ public class UnidirectionalLinkSelector implements LinkSelector {
 
         while (!outboundApplications.isEmpty() || !inboundApplications.isEmpty()) {
 
-            logger.info("outbound depth search start. callerDepth:{}, calleeDepth:{}, size:{}, nodes:{}", outboundLinkSelectContext.getCallerDepth(), outboundLinkSelectContext.getCalleeDepth(), outboundApplications.size(), outboundApplications);
+            logger.debug("outbound depth search start. callerDepth:{}, calleeDepth:{}, size:{}, nodes:{}", outboundLinkSelectContext.getCallerDepth(), outboundLinkSelectContext.getCalleeDepth(), outboundApplications.size(), outboundApplications);
             LinkDataDuplexMap outboundMap = applicationsMapCreator.createLinkDataDuplexMap(outboundApplications, outboundLinkSelectContext);
-            logger.info("outbound depth search end. callerDepth:{}, calleeDepth:{}", outboundLinkSelectContext.getCallerDepth(), outboundLinkSelectContext.getCalleeDepth());
+            logger.debug("outbound depth search end. callerDepth:{}, calleeDepth:{}", outboundLinkSelectContext.getCallerDepth(), outboundLinkSelectContext.getCalleeDepth());
 
-            logger.info("inbound depth search start. callerDepth:{}, calleeDepth:{}, size:{}, nodes:{}", inboundLinkSelectContext.getCallerDepth(), inboundLinkSelectContext.getCalleeDepth(), inboundApplications.size(), inboundApplications);
+            logger.debug("inbound depth search start. callerDepth:{}, calleeDepth:{}, size:{}, nodes:{}", inboundLinkSelectContext.getCallerDepth(), inboundLinkSelectContext.getCalleeDepth(), inboundApplications.size(), inboundApplications);
             LinkDataDuplexMap inboundMap = applicationsMapCreator.createLinkDataDuplexMap(inboundApplications, inboundLinkSelectContext);
-            logger.info("inbound depth search end. callerDepth:{}, calleeDepth:{}", inboundLinkSelectContext.getCallerDepth(), inboundLinkSelectContext.getCalleeDepth());
+            logger.debug("inbound depth search end. callerDepth:{}, calleeDepth:{}", inboundLinkSelectContext.getCallerDepth(), inboundLinkSelectContext.getCalleeDepth());
 
             linkDataDuplexMap.addLinkDataDuplexMap(outboundMap);
             linkDataDuplexMap.addLinkDataDuplexMap(inboundMap);
