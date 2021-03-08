@@ -30,10 +30,16 @@ public class AlarmMessageSenderImpl implements AlarmMessageSender {
         List<String> sms = checker.getSmsMessage();
         for (String id : receivers) {
             for (String message : sms) {
-                logger.error("send SMS : {}", message);
+                String applicationId = "";
+                try {
+                    applicationId = checker.getRule().getApplicationId();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                logger.error("send SMS : {} {}", applicationId, message);
                 // TODO Implement logic for sending SMS
                 try {
-                    WxNotifyUtils.sendMsg(id, message);
+                    WxNotifyUtils.sendMsg(id, applicationId + " " + message);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
