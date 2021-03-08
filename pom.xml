@@ -81,7 +81,7 @@
         <httpcomponents.version>4.3</httpcomponents.version>
         <jedis.version>2.4.2</jedis.version>
         <cloverLicenseLocation>${basedir}/clover.license</cloverLicenseLocation>
-        <spring.version>4.3.8.RELEASE</spring.version>
+        <spring.version>5.3.4</spring.version>
         <spring.batch.version>3.0.7.RELEASE</spring.batch.version>
         <spring.security.version>4.2.2.RELEASE</spring.security.version>
         <docker.maven.plugin.version>0.4.3</docker.maven.plugin.version>
