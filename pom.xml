@@ -78,7 +78,7 @@
         <metrics.version>3.1.2</metrics.version>
         <jetty.version>8.1.12.v20130726</jetty.version>
         <fastxml.jackson.version>2.6.7</fastxml.jackson.version>
-        <httpcomponents.version>4.3</httpcomponents.version>
+        <httpcomponents.version>4.5.13</httpcomponents.version>
         <jedis.version>2.4.2</jedis.version>
         <cloverLicenseLocation>${basedir}/clover.license</cloverLicenseLocation>
         <spring.version>4.3.8.RELEASE</spring.version>
